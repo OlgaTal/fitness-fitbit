@@ -31,10 +31,12 @@ function setPosition() {
       "latitude" : random(-10, 10),
       "longitude": random(-10, 10),
       "altitude": random(-1, 1),
+      // "currentTime": new Date(),
   };
   var options = {
     url: 'http://localhost:9001/api/positions/abc123',
-    json: position,
+    json: true,
+    body: position,
     method: 'POST'
   };
   request(options, (err, res, body) => {
@@ -53,7 +55,7 @@ startRun();
 
 setTimeout(function() {
   stopRun();
-}, 30000);
+}, 10000);
 
 
 // startRun();
